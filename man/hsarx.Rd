@@ -1,13 +1,16 @@
 \name{hsarx}
 \alias{hsarx}
+\alias{hsarx-class}
+\alias{show,hsarx-method}
 \title{
 Fit SAR, SARX, HSAR and HSARX models to data
 }
 \description{
-Fit SAR, SARX, HSAR and HSARX models to data
+Fit SAR, SARX, HSAR and HSARX models to data as
+described in Solymos and Lele (2012).
 }
 \usage{
-hsarx(formula, data, n.clones, cl = NULL, subset, na.action, ...)
+hsarx(formula, data, n.clones, cl = NULL, ...)
 }
 \arguments{
   \item{formula}{
@@ -22,32 +25,28 @@ Number of clones to be used.
   \item{cl}{
 Cluster object for parallel computations.
 }
-  \item{subset}{
-Subset to data argument.
-}
-  \item{na.action}{
-Handling of NA values.
-}
   \item{\dots}{
 Other arguments for MCMC.
 }
 }
 \details{
-Fit SAR, SARX, HSAR and HSARX models to data as described in Solymos and Lele
+Fit SAR, SARX, HSAR and HSARX models to data as described in 
+Solymos and Lele (2012).
 }
 \value{
-An mcmc.list object.
+An S4 object object of class 'hsarx'. It inherits from 'dcMle',
+and has additional slots for storing the data.
 }
 \references{
-Solymos, P. and Lele, S. R. (in press), Global pattern and local variation
-in species-area relationships. 
-Global Ecology and Biogeography, xx: xx--xx.
+Solymos, P. and Lele, S. R., 2012. 
+Global pattern and local variation in species-area relationships. 
+\emph{Global Ecology and Biogeography} 21, 109--120.
 }
 \author{
 Peter Solymos
 }
 \seealso{
-jags.fit, etc.
+\code{\link{sardata}} for data sets.
 }
 \examples{
 \dontrun{
@@ -59,17 +58,17 @@ x <- hsarx(log(S+0.5) ~ log(A) | (taxon.group + island.type + abs(latitude) + I(
 
 ## SAR
 DATS <- DAT[1:191,]
-x1 <- hsarx(log(S+0.5) ~ log(A), DATS[DATS$study=="abbott1978bird",], n.clones=2)
+(x1 <- hsarx(log(S+0.5) ~ log(A), DATS[DATS$study=="abbott1978bird",], n.clones=2))
 
 ## SARX
 DATS$rnd <- rnorm(nrow(DATS), log(DATS$extent))
-x2 <- hsarx(log(S+0.5) ~ log(A) * rnd, DATS[DATS$study=="abbott1978bird",], n.clones=2)
+(x2 <- hsarx(log(S+0.5) ~ log(A) * rnd, DATS[DATS$study=="abbott1978bird",], n.clones=2))
 
 ## HSAR
-x3 <- hsarx(log(S+0.5) ~ log(A) | 1 | study, DATS, n.clones=2, n.iter=1000)
+(x3 <- hsarx(log(S+0.5) ~ log(A) | 1 | study, DATS, n.clones=2, n.iter=1000))
 
 ## HSARX
-x4 <- hsarx(log(S+0.5) ~ log(A) | abs(latitude) | study, DATS, n.clones=2, n.iter=1000)
+(x4 <- hsarx(log(S+0.5) ~ log(A) | abs(latitude) | study, DATS, n.clones=2, n.iter=1000))
 }
 }
 \keyword{ htest }

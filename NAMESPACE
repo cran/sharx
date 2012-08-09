@@ -1,3 +1,6 @@
 importFrom(Formula)
-importFrom(dclone)
-export(hsarx)
+importFrom(dcmle)
+
+export(hsarx, sie, sieplot)
+exportClasses(hsarx, sie)
+exportMethods(show)
