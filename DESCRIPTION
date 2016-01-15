@@ -1,20 +1,23 @@
 Package: sharx
 Type: Package
 Title: Models and Data Sets for the Study of Species-Area Relationships
-Version: 1.0-4
-Date: 2014-05-19
+Version: 1.0-5
+Date: 2016-01-12
 Author: Peter Solymos
 Maintainer: Peter Solymos <solymos@ualberta.ca>
-Description: Data sets and SAR, SARX, HSAR and HSARX 
-  models as described in Solymos and Lele 
-  (2012, GEB 21, 109-120).
+Description: Hierarchical models for the analysis of species-area 
+  relationships (SARs) by combining several data sets and covariates; 
+  with a global data set combining individual SAR studies; 
+  as described in Solymos and Lele 
+  (2012, Global Ecology and Biogeography 21, 109-120).
 Depends: methods, stats4, Formula, dcmle, dclone
 SystemRequirements: jags (>= 1.0.3)
-URL: http://dcr.r-forge.r-project.org/
+URL: https://github.com/psolymos/sharx
+BugReports: https://github.com/psolymos/sharx/issues
 License: GPL-2
 LazyLoad: yes
 LazyData: true
-Packaged: 2014-05-19 08:40:58 UTC; Peter
 NeedsCompilation: no
+Packaged: 2016-01-15 00:29:59 UTC; root
 Repository: CRAN
-Date/Publication: 2014-05-19 22:16:07
+Date/Publication: 2016-01-15 10:28:30
