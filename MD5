@@ -1,10 +1,10 @@
-eedc4776512e7bfb12aeb5c90b089e5a *DESCRIPTION
+033392610406a040bab1109dd400ee59 *DESCRIPTION
 e1c362d6489ee98973f504ae7c563513 *NAMESPACE
 2d63caa63f857882f87aa0aaf6e5d12d *R/hsarx.R
 267405295c511f3d6f9972b17286e2de *R/sie.R
 d9ccee1ed9e55ab948c158a0fbde88bd *data/sardata.rda
 7cb2d03e8f21f5c49afa489bd44a4b35 *inst/CITATION
-0f41ef0f23d3b5d0e6e13edb3b56af1e *inst/ChangeLog
+b6bef4f2d04fff1d633998ec3f40c4d0 *inst/ChangeLog
 f202b9d27803adf30100d38ba3933a7c *inst/sardata.bib
 c387677450e5eba224cf2a41d25334d3 *inst/sardata.txt
 2212b4440389580c443a82aa7f98d2d3 *man/hsarx.Rd
